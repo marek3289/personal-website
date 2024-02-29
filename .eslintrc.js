@@ -1,0 +1,52 @@
+module.exports = {
+  root: true,
+  parser: '@typescript-eslint/parser',
+  env: {
+    browser: true,
+    amd: true,
+    node: true,
+    es6: true,
+  },
+  globals: {
+    document: true,
+  },
+  plugins: ['@typescript-eslint'],
+  extends: [
+    'eslint:recommended',
+    'eslint-config-prettier',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:jsx-a11y/recommended',
+    'plugin:prettier/recommended',
+    'plugin:@next/next/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
+    'next',
+    'next/core-web-vitals',
+    'prettier',
+  ],
+  parserOptions: {
+    project: true,
+    tsconfigRootDir: __dirname,
+  },
+  rules: {
+    'prettier/prettier': 'warn',
+    'react/react-in-jsx-scope': 'off',
+    'jsx-a11y/anchor-is-valid': [
+      'error',
+      {
+        components: ['Link'],
+        specialLink: ['hrefLeft', 'hrefRight'],
+        aspects: ['invalidHref', 'preferButton'],
+      },
+    ],
+    'react/prop-types': 0,
+    '@typescript-eslint/no-unused-vars': 0,
+    'react/no-unescaped-entities': 0,
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off',
+  },
+}
