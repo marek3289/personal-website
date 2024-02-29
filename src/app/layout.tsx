@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Space_Grotesk } from 'next/font/google'
 
+import { Header, Footer } from '@/components'
 import siteMetadata from '@/data/site-metadata'
 import { ThemeProviders } from './theme-providers'
 import '@/styles/tailwind.css'
@@ -54,7 +55,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang={siteMetadata.language} className={`${space_grotesk.variable} scroll-smooth`} suppressHydrationWarning>
@@ -68,25 +69,28 @@ export default function RootLayout({
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" /> */}
 
-      <body className="bg-white text-black antialiased dark:bg-gray-950 dark:text-white">
+      <body className='bg-white text-black antialiased dark:bg-gray-950 dark:text-white'>
         {/* <ThemeProviders>
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
 
-          <SectionContainer>
-            <div className="flex h-screen flex-col justify-between font-sans">
               <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
                 <Header />
                 <main className="mb-auto">{children}</main>
               </SearchProvider>
               <Footer />
-            </div>
-          </SectionContainer>
-        </ThemeProviders> */}
+            */}
 
         <ThemeProviders>
-          <main className='mb-auto'>{children}</main>
+          <section className='mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0'>
+            <div className='flex h-screen flex-col justify-between font-sans'>
+              <Header />
+              <main className='mb-auto'>{children}</main>
+            </div>
+
+            <Footer />
+          </section>
         </ThemeProviders>
       </body>
     </html>
-  );
+  )
 }
