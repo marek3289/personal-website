@@ -8,7 +8,11 @@
     "build": "cross-env INIT_CWD=$PWD next build && cross-env NODE_OPTIONS='--experimental-json-modules' node ./scripts/postbuild.mjs",
     "serve": "next start",
     "analyze": "cross-env ANALYZE=true next build",
-    "lint": "next lint --fix --dir pages --dir app --dir components --dir lib --dir layouts --dir scripts"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "lint:strict": "next lint '*/**/*.{js,jsx,ts,tsx}'",
+    "prettier": "prettier --write */**/*.{js,jsx,json,ts,tsx,scss,css,md}",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@next/bundle-analyzer": "^14.1.0",
@@ -55,11 +59,16 @@
   },
   "lint-staged": {
     "*.+(js|jsx|ts|tsx)": [
-      "eslint --fix"
+      "prettier --write",
+      "eslint --fix",
+      "eslint"
     ],
     "*.+(js|jsx|ts|tsx|json|css|md|mdx)": [
       "prettier --write"
-    ]
+    ],
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "packageManager": "yarn@1.22.4"
 }
