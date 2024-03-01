@@ -1,10 +1,12 @@
+'use client'
+
 import Link from 'next/link'
 
-import { ThemeSwitch } from '@/components'
+import { MobileMenu, ThemeSwitch } from '@/components'
 import siteMetadata from '@/data/site-metadata'
 import navLinks from '@/data/nav-links'
 // import Logo from '@/data/logo.svg'
-// import MobileNav from './MobileNav'
+import MobileNav from './mobile-menu'
 // import SearchButton from './SearchButton'
 
 const Header = () => {
@@ -13,7 +15,7 @@ const Header = () => {
       <div>
         <Link href='/' aria-label={siteMetadata.headerTitle}>
           <div className='flex items-center justify-between'>
-            <div className='hidden h-6 text-2xl font-semibold sm:block'>{siteMetadata.headerTitle}</div>
+            <div className='text-2xl font-semibold'>{siteMetadata.headerTitle}</div>
           </div>
         </Link>
       </div>
@@ -25,15 +27,14 @@ const Header = () => {
             <Link
               key={link.title}
               href={link.href}
-              className='hidden font-medium text-gray-900 sm:block dark:text-gray-100'
+              className='hidden font-medium text-gray-900 dark:text-gray-100 sm:block'
             >
               {link.title}
             </Link>
           ))}
 
-        {/* <SearchButton /> */}
         <ThemeSwitch />
-        {/* <MobileNav /> */}
+        <MobileNav />
       </div>
     </header>
   )

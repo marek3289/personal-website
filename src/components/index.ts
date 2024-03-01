@@ -1,5 +1,6 @@
 import Header from './header'
+import MobileMenu from './mobile-menu'
 import Footer from './footer'
 import ThemeSwitch from './theme-switch'
 
-export { Header, Footer, ThemeSwitch }
+export { Header, MobileMenu, Footer, ThemeSwitch }
