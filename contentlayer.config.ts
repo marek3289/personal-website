@@ -64,7 +64,7 @@ function createTagCount(allPosts: any[]) {
     }
   })
 
-  writeFileSync('./app/tag-data.json', JSON.stringify(tagCount))
+  writeFileSync('./src/app/tag-data.json', JSON.stringify(tagCount))
 }
 
 function createSearchIndex(allPosts: any[]) {
