@@ -33,13 +33,9 @@ export default function BlogListLayout({ posts, title, initialDisplayPosts, pagi
   )
 
   return (
-    <>
-      <div className='divide-y divide-gray-200 dark:divide-gray-700'>
-        <div className='space-y-2 pb-8 pt-6 md:space-y-5'>
-          <h1 className='text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14'>
-            {title}
-          </h1>
-          <div className='relative max-w-lg'>
+    <div className='sm:space-y-8'>
+      <h2 className='text-2xl font-semibold sm:text-3xl'>{title}</h2>
+      {/* <div className='relative max-w-lg'>
             <label>
               <span className='sr-only'>Search articles</span>
               <input
@@ -64,25 +60,23 @@ export default function BlogListLayout({ posts, title, initialDisplayPosts, pagi
                 d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'
               />
             </svg>
-          </div>
-        </div>
+          </div> */}
 
-        <div className='pt-4'>
-          {!filteredBlogPosts.length && 'No posts found.'}
+      <div>
+        {!filteredBlogPosts.length && 'No posts found.'}
 
-          <ul>
-            {displayPosts.map(post => (
-              <li key={post.path}>
-                <SinglePost post={post} />
-              </li>
-            ))}
-          </ul>
+        <ul className='flex flex-col gap-4'>
+          {displayPosts.map(post => (
+            <li key={post.path}>
+              <SinglePost post={post} />
+            </li>
+          ))}
+        </ul>
 
-          {pagination && pagination.totalPages > 1 && !searchValue && (
-            <Pagination currentPage={pagination.currentPage} totalPages={pagination.totalPages} />
-          )}
-        </div>
+        {pagination && pagination.totalPages > 1 && !searchValue && (
+          <Pagination currentPage={pagination.currentPage} totalPages={pagination.totalPages} />
+        )}
       </div>
-    </>
+    </div>
   )
 }

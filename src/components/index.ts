@@ -1,18 +1,20 @@
-import Header from './header'
+import Navigation from './navigation'
 import MobileMenu from './mobile-menu'
 import Footer from './footer'
-import ThemeSwitch from './theme-switch'
+import Sidebar from './sidebar'
 
 import SinglePost from './single-post'
 import Pagination from './pagination'
+import ThemeSwitch from './theme-switch'
 
 export {
   // Layout
-  Header,
+  Navigation,
   MobileMenu,
   Footer,
-  ThemeSwitch,
+  Sidebar,
   // Blog
   SinglePost,
   Pagination,
+  ThemeSwitch,
 }

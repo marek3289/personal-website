@@ -1,3 +1,5 @@
 import BlogListLayout from './blog-list-layout'
 
-export { BlogListLayout }
+import PostLayout from './post-layout'
+
+export { BlogListLayout, PostLayout }

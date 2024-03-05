@@ -19,6 +19,7 @@
     "@next/bundle-analyzer": "^14.1.0",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.10",
+    "clsx": "^2.1.0",
     "contentlayer": "^0.3.4",
     "gray-matter": "^4.0.3",
     "next": "14.1.0",
@@ -36,7 +37,8 @@
     "rehype-slug": "^5.1.0",
     "remark": "^14.0.2",
     "remark-gfm": "^3.0.1",
-    "remark-math": "^5.1.1"
+    "remark-math": "^5.1.1",
+    "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.1.0",

@@ -1,15 +1,23 @@
 import type { Metadata } from 'next'
-import { Space_Grotesk } from 'next/font/google'
+import { Habibi, Lancelot, Lato } from 'next/font/google'
 
-import { Header, Footer } from '@/components'
+import { Navigation, Footer } from '@/components'
 import siteMetadata from '@/data/site-metadata'
 import { ThemeProviders } from './theme-providers'
 import '@/styles/tailwind.css'
 
-const space_grotesk = Space_Grotesk({
+const habibi = Habibi({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-space-grotesk',
+  variable: '--font-habibi',
+  weight: '400',
+})
+
+const lato = Lato({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: '400',
+  variable: '--font-lato',
 })
 
 export const metadata: Metadata = {
@@ -54,18 +62,23 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang={siteMetadata.language} className={`${space_grotesk.variable} scroll-smooth`} suppressHydrationWarning>
-      {/* <link rel="apple-touch-icon" sizes="76x76" href="/static/favicons/apple-touch-icon.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/static/favicons/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/static/favicons/favicon-16x16.png" />
-      <link rel="manifest" href="/static/favicons/site.webmanifest" />
-      <link rel="mask-icon" href="/static/favicons/safari-pinned-tab.svg" color="#5bbad5" />
-      <meta name="msapplication-TileColor" content="#000000" />
-      <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
-      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
-      <link rel="alternate" type="application/rss+xml" href="/feed.xml" /> */}
+    <html
+      lang={siteMetadata.language}
+      className={`${lato.variable} ${habibi.variable} scroll-smooth`}
+      suppressHydrationWarning
+    >
+      <head>
+        <link rel='apple-touch-icon' sizes='180x180' href='/static/favicon/apple-touch-icon.png' />
+        <link rel='icon' type='image/png' sizes='32x32' href='/static/favicon/favicon-32x32.png' />
+        <link rel='icon' type='image/png' sizes='16x16' href='/static/favicon/favicon-16x16.png' />
+        <link rel='manifest' href='/static/favicon/site.webmanifest' />
+        <link rel='mask-icon' href='/static/favicon/safari-pinned-tab.svg' color='#383838' />
+        <meta name='msapplication-TileColor' content='#000000' />
+        <meta name='theme-color' content='#000000' />
+        <link rel='alternate' type='application/rss+xml' href='/feed.xml' />
+      </head>
 
-      <body className='bg-white text-black antialiased dark:bg-gray-950 dark:text-white'>
+      <body className='bg-white text-black antialiased dark:bg-[#171717] dark:text-white'>
         {/* <ThemeProviders>
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
 
@@ -77,13 +90,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             */}
 
         <ThemeProviders>
-          <section className='mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0'>
-            <div className='flex h-screen flex-col justify-between font-sans'>
-              <Header />
-              <main className='mb-auto'>{children}</main>
+          <section className='flex min-h-screen flex-col font-sans'>
+            <div className='mx-auto flex h-full w-full max-w-3xl flex-1 flex-col gap-x-24 gap-y-8 px-16 pt-16 sm:flex-row sm:px-6 xl:px-0'>
+              <Navigation />
+              <main className='w-full'>{children}</main>
             </div>
-
-            <Footer />
+            <div className='mt-auto'>
+              <Footer />
+            </div>
           </section>
         </ThemeProviders>
       </body>

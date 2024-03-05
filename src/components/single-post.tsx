@@ -7,33 +7,17 @@ interface SinglePostProps {
 }
 
 export default function SinglePost({ post }: SinglePostProps) {
-  const { title } = post
+  const { title, date, path, summary } = post
 
   return (
     <article>
-      <h2>{title}</h2>
+      <Link href={`/blog/${path}`} className='text-gray-900 dark:text-gray-100'>
+        <h3>{title}</h3>
+        <time className='text-gray-500'>
+          {new Date(date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </time>
+        <p className='prose max-w-none text-gray-500 dark:text-gray-400'>{summary}</p>
+      </Link>
     </article>
   )
 }
-
-// const { path, date, title, summary, tags } = post
-
-// <article className='space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0'>
-// <dl>
-//   <dt className='sr-only'>Published on</dt>
-//   <dd className='text-base font-medium leading-6 text-gray-500 dark:text-gray-400'>
-//     <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
-//   </dd>
-// </dl>
-// <div className='space-y-3 xl:col-span-3'>
-//   <div>
-//     <h3 className='text-2xl font-bold leading-8 tracking-tight'>
-//       <Link href={`/${path}`} className='text-gray-900 dark:text-gray-100'>
-//         {title}
-//       </Link>
-//     </h3>
-//     <div className='flex flex-wrap'>{tags?.map(tag => <Tag key={tag} text={tag} />)}</div>
-//   </div>
-//   <div className='prose max-w-none text-gray-500 dark:text-gray-400'>{summary}</div>
-// </div>
-// </article>

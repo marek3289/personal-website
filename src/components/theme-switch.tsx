@@ -4,7 +4,7 @@ import { useTheme } from 'next-themes'
 
 import { useIsMounted } from '@/hooks'
 
-const ThemeSwitch = () => {
+export default function ThemeSwitch() {
   const isMounted = useIsMounted()
   const { theme, setTheme, resolvedTheme } = useTheme()
 
@@ -34,5 +34,3 @@ const ThemeSwitch = () => {
     </button>
   )
 }
-
-export default ThemeSwitch

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 
-const useIsMounted = () => {
+export default function useIsMounted() {
   const [isMounted, setMounted] = useState<boolean>(false)
 
   // When mounted on client, now we can show the UI
@@ -10,5 +10,3 @@ const useIsMounted = () => {
 
   return isMounted
 }
-
-export default useIsMounted

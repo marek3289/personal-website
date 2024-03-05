@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 import navLinks from '@/data/nav-links'
 
-const MobileMenu = () => {
+export default function MobileMenu() {
   const [showMenu, setShowMenu] = useState<boolean>(false)
 
   const onToggleNav = () => {
@@ -73,5 +73,3 @@ const MobileMenu = () => {
     </>
   )
 }
-
-export default MobileMenu
