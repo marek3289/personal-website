@@ -21,7 +21,8 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
-        sans: ['var(--font-lato)', ...fontFamily.sans],
+        lato: ['var(--font-lato)', ...fontFamily.sans],
+        cardo: ['var(--font-cardo)', ...fontFamily.sans],
       },
       colors: {
         primary: colors.pink,

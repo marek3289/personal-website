@@ -7,6 +7,8 @@ import SinglePost from './single-post'
 import Pagination from './pagination'
 import ThemeSwitch from './theme-switch'
 
+import { UnstyledLink, NavLink } from './links'
+
 export {
   // Layout
   Navigation,
@@ -17,4 +19,8 @@ export {
   SinglePost,
   Pagination,
   ThemeSwitch,
+
+  // Components
+  UnstyledLink,
+  NavLink,
 }

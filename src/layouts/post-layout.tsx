@@ -27,7 +27,7 @@ export default function PostLayout({ content, children }: BlogLayoutProps) {
             </div>
           </dl>
           <div>
-            <h2 className='text-2xl font-semibold sm:text-3xl'>{title}</h2>
+            <h2 className='font-cardo text-2xl font-semibold sm:text-3xl'>{title}</h2>
           </div>
         </div>
       </header>

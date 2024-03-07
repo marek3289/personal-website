@@ -1,8 +1,8 @@
 const navLinks = [
-  { href: '/', title: 'Home' },
-  { href: '/projects', title: 'Projects' },
-  { href: '/blog', title: 'Blog' },
-  { href: '/tags', title: 'Tags' },
+  { href: '/', title: 'home' },
+  { href: '/projects', title: 'projects' },
+  { href: '/blog', title: 'blog' },
+  { href: '/tags', title: 'tags' },
 ]
 
 export default navLinks

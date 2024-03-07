@@ -9,7 +9,7 @@
 export default function Projects() {
   return (
     <div className='sm:space-y-8'>
-      <h2 className='text-2xl font-semibold sm:text-3xl'>Projects</h2>
+      <h2 className='font-cardo text-2xl font-semibold sm:text-3xl'>Projects</h2>
       <div>Project list</div>
     </div>
   )

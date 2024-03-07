@@ -1,16 +1,16 @@
 import type { Metadata } from 'next'
-import { Habibi, Lancelot, Lato } from 'next/font/google'
+import { Cardo, Lato } from 'next/font/google'
 
 import { Navigation, Footer } from '@/components'
 import siteMetadata from '@/data/site-metadata'
 import { ThemeProviders } from './theme-providers'
 import '@/styles/tailwind.css'
 
-const habibi = Habibi({
+const cardo = Cardo({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-habibi',
-  weight: '400',
+  variable: '--font-cardo',
+  weight: '700',
 })
 
 const lato = Lato({
@@ -64,7 +64,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html
       lang={siteMetadata.language}
-      className={`${lato.variable} ${habibi.variable} scroll-smooth`}
+      className={`${lato.variable} ${cardo.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <head>
@@ -78,7 +78,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <link rel='alternate' type='application/rss+xml' href='/feed.xml' />
       </head>
 
-      <body className='bg-white text-black antialiased dark:bg-[#171717] dark:text-white'>
+      <body className='font-lato bg-white text-black antialiased dark:bg-[#171717] dark:text-white'>
         {/* <ThemeProviders>
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
 
