@@ -1,8 +1,18 @@
-const navLinks = [
-  { href: '/', title: 'home' },
-  { href: '/projects', title: 'projects' },
-  { href: '/blog', title: 'blog' },
-  { href: '/tags', title: 'tags' },
+import { CodeIcon, HomeIcon, NotebookIcon, HashIcon } from 'lucide-react'
+
+import { Icons } from '@/components/icons'
+import site from './site'
+import routes from './routes'
+
+export const navMenu = [
+  { href: routes.home, icon: HomeIcon, label: 'Home' },
+  { href: routes.blog, icon: NotebookIcon, label: 'Blog' },
+  { href: routes.projects, icon: CodeIcon, label: 'Projects' },
+  { href: routes.tags, icon: HashIcon, label: 'Tags' },
 ]
 
-export default navLinks
+export const socialMenu = [
+  { href: site.contact.github, icon: Icons.github, label: 'Github' },
+  { href: site.contact.linkedin, icon: Icons.linkedin, label: 'LinkedIn' },
+  { href: site.contact.twitter, icon: Icons.twitter, label: 'X' },
+]

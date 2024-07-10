@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import siteMetadata from '@/data/site-metadata'
+import siteMetadata from '@/data/site'
 
 export default function robots(): MetadataRoute.Robots {
   return {

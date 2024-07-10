@@ -3,7 +3,7 @@ import { formatDate } from 'pliny/utils/formatDate'
 import { CoreContent } from 'pliny/utils/contentlayer'
 import type { Post } from 'contentlayer/generated'
 
-import siteMetadata from '@/data/site-metadata'
+import siteMetadata from '@/data/site'
 
 interface BlogLayoutProps {
   content: CoreContent<Post>
@@ -19,12 +19,10 @@ export default function PostLayout({ content, children }: BlogLayoutProps) {
       <header>
         <div>
           <dl>
-            <div>
-              <dt className='sr-only'>Published on</dt>
-              <dd className='text-base font-medium leading-6 text-gray-500 dark:text-gray-400'>
-                <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
-              </dd>
-            </div>
+            <dt className='sr-only'>Published on</dt>
+            <dd className='text-base font-medium leading-6 text-gray-500 dark:text-gray-400'>
+              <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
+            </dd>
           </dl>
           <div>
             <h2 className='font-cardo text-2xl font-semibold sm:text-3xl'>{title}</h2>

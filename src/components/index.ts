@@ -1,26 +1,19 @@
-import Navigation from './navigation'
-import MobileMenu from './mobile-menu'
-import Footer from './footer'
-import Sidebar from './sidebar'
-
-import SinglePost from './single-post'
-import Pagination from './pagination'
+import Providers from './providers'
+import Navbar from './navbar'
 import ThemeSwitch from './theme-switch'
 
-import { UnstyledLink, NavLink } from './links'
+import { Icons } from './icons'
+import SinglePost from './single-post'
+import Pagination from './pagination'
 
 export {
   // Layout
-  Navigation,
-  MobileMenu,
-  Footer,
-  Sidebar,
-  // Blog
-  SinglePost,
-  Pagination,
+  Providers,
+  Navbar,
   ThemeSwitch,
 
   // Components
-  UnstyledLink,
-  NavLink,
+  Icons,
+  SinglePost,
+  Pagination,
 }

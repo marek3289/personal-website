@@ -1,23 +1,20 @@
-// import { genPageMetadata } from '@/app/seo'
-// export const metadata = genPageMetadata({ title: 'Projects' })
+import BlurFade from '@/components/magicui/blur-fade'
+import { BLUR_FADE_DELAY } from '@/helpers/constants'
 
-// export default async function BlogPage() {
-//   // const projects = allCoreContent(sortPosts(allPosts))
-//   return <ProjectsLayout />
-// }
+export async function generateMetadata() {
+  return {
+    title: 'My Projects',
+    description:
+      'Take a look at my projects and explore the different things I’m passionate about. From tech experiments to creative endeavors, discover what I’ve been working on.',
+  }
+}
 
 export default function Projects() {
   return (
-    <div className='sm:space-y-8'>
-      <h2 className='font-cardo text-2xl font-semibold sm:text-3xl'>Projects</h2>
-      <div>Project list</div>
-    </div>
+    <section className='sm:space-y-8'>
+      <BlurFade delay={BLUR_FADE_DELAY}>
+        <h1 className='mb-8 text-2xl font-medium tracking-tighter'>projects</h1>
+      </BlurFade>
+    </section>
   )
-}
-
-{
-  /* <div className='-m-4 flex flex-wrap'>
-  {projectsData.map(d => (
-    <Card key={d.title} title={d.title} description={d.description} imgSrc={d.imgSrc} href={d.href} />
-  ))} */
 }

@@ -2,40 +2,43 @@ import { useMemo } from 'react'
 import Link from 'next/link'
 import { slug } from 'github-slugger'
 
+import BlurFade from '@/components/magicui/blur-fade'
 import tagData from '@/app/tag-data.json'
+import { BLUR_FADE_DELAY } from '@/helpers/constants'
 
-// export const metadata = genPageMetadata({ title: 'Tags', description: 'Things I blog about' })
+export async function generateMetadata() {
+  return {
+    title: 'Discover My Blog Topics',
+    description:
+      'Explore the different things I love to write about. From personal experiences to insightful articles, dive into my world of blogging.',
+  }
+}
 
-// @TODO: Add primary color
 export default async function TagsPage() {
   const tagCounts = tagData as Record<string, number>
   const tagKeys = Object.keys(tagCounts)
   const sortedTags = useMemo(() => [...tagKeys].sort((a, b) => tagCounts[b] - tagCounts[a]), [tagCounts, tagKeys])
 
   return (
-    <div className='sm:space-y-8'>
-      <h2 className='text-2xl font-semibold sm:text-3xl'>Tags</h2>
+    <section className='sm:space-y-8'>
+      <BlurFade delay={BLUR_FADE_DELAY}>
+        <h1 className='mb-8 text-2xl font-medium tracking-tighter'>tags</h1>
+      </BlurFade>
 
       <ul>
         {tagKeys.length === 0 && 'No tags found.'}
-        {sortedTags.map(tag => {
+        {sortedTags.map((tag, idx) => {
           return (
             <li key={tag}>
-              <Link href={`/tags/${slug(tag)}`} className='tag'>
-                {tag.split(' ').join('-')}
-              </Link>
-
-              <Link
-                href={`/tags/${slug(tag)}`}
-                className='-ml-2 text-sm font-semibold uppercase text-gray-600 dark:text-gray-300'
-                aria-label={`View posts tagged ${tag}`}
-              >
-                {` (${tagCounts[tag]})`}
-              </Link>
+              <BlurFade delay={BLUR_FADE_DELAY + idx * 0.05}>
+                <Link href={`/tags/${slug(tag)}`} className='tag' aria-label={`View posts tagged ${tag}`}>
+                  {tag.split(' ').join('-')} {` (${tagCounts[tag]})`}
+                </Link>
+              </BlurFade>
             </li>
           )
         })}
       </ul>
-    </div>
+    </section>
   )
 }

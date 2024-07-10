@@ -23,8 +23,8 @@ import rehypeCitation from 'rehype-citation'
 import rehypePrismPlus from 'rehype-prism-plus'
 import rehypePresetMinify from 'rehype-preset-minify'
 
-import siteMetadata from './src/data/site-metadata'
-import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer.js'
+import siteMetadata from './src/data/site'
+// import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer.js'
 
 const root = process.cwd()
 const isProduction = process.env.NODE_ENV === 'production'
@@ -67,15 +67,15 @@ function createTagCount(allPosts: any[]) {
   writeFileSync('./src/app/tag-data.json', JSON.stringify(tagCount))
 }
 
-function createSearchIndex(allPosts: any[]) {
-  if (siteMetadata?.search?.provider === 'kbar' && siteMetadata.search.kbarConfig.searchDocumentsPath) {
-    writeFileSync(
-      `public/${siteMetadata.search.kbarConfig.searchDocumentsPath}`,
-      JSON.stringify(allCoreContent(sortPosts(allPosts))),
-    )
-    console.log('Local search index generated...')
-  }
-}
+// function createSearchIndex(allPosts: any[]) {
+//   if (siteMetadata?.search?.provider === 'kbar' && siteMetadata.search.kbarConfig.searchDocumentsPath) {
+//     writeFileSync(
+//       `public/${siteMetadata.search.kbarConfig.searchDocumentsPath}`,
+//       JSON.stringify(allCoreContent(sortPosts(allPosts))),
+//     )
+//     console.log('Local search index generated...')
+//   }
+// }
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',
@@ -105,7 +105,7 @@ export const Post = defineDocumentType(() => ({
         datePublished: doc.date,
         dateModified: doc.lastmod || doc.date,
         description: doc.summary,
-        image: doc.images ? doc.images[0] : siteMetadata.socialBanner,
+        // image: doc.images ? doc.images[0] : siteMetadata.socialBanner,
         url: `${siteMetadata.siteUrl}/${doc._raw.flattenedPath}`,
       }),
     },
@@ -130,6 +130,6 @@ export default makeSource({
   onSuccess: async importData => {
     const { allPosts } = await importData()
     createTagCount(allPosts)
-    createSearchIndex(allPosts)
+    // createSearchIndex(allPosts)
   },
 })

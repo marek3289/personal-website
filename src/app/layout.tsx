@@ -1,45 +1,37 @@
+import type { ReactNode } from 'react'
 import type { Metadata } from 'next'
-import { Cardo, Lato } from 'next/font/google'
+import { Inter as FontSans } from 'next/font/google'
 
-import { Navigation, Footer } from '@/components'
-import siteMetadata from '@/data/site-metadata'
-import { ThemeProviders } from './theme-providers'
-import '@/styles/tailwind.css'
+import { Providers, Navbar } from '@/components'
+import { cn } from '@/helpers/cn'
+import site from '@/data/site'
+import './globals.css'
 
-const cardo = Cardo({
+const fontSans = FontSans({
   subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-cardo',
-  weight: '700',
-})
-
-const lato = Lato({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: '400',
-  variable: '--font-lato',
+  variable: '--font-sans',
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteMetadata.siteUrl),
+  metadataBase: new URL(site.siteUrl),
   title: {
-    default: siteMetadata.title,
-    template: `%s | ${siteMetadata.title}`,
+    default: site.title,
+    template: `%s | ${site.shortTitle}`,
   },
-  description: siteMetadata.description,
+  description: site.description,
   openGraph: {
-    title: siteMetadata.title,
-    description: siteMetadata.description,
+    title: site.title,
+    description: site.description,
     url: './',
-    siteName: siteMetadata.title,
-    images: [siteMetadata.socialBanner],
+    siteName: site.title,
+    // images: [siteMetadata.socialBanner],
     locale: 'en_US',
     type: 'website',
   },
   alternates: {
     canonical: './',
     types: {
-      'application/rss+xml': `${siteMetadata.siteUrl}/feed.xml`,
+      'application/rss+xml': `${site.siteUrl}/feed.xml`,
     },
   },
   robots: {
@@ -54,19 +46,19 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: siteMetadata.title,
+    title: site.title,
     card: 'summary_large_image',
-    images: [siteMetadata.socialBanner],
+    // images: [siteMetadata.socialBanner],
+  },
+  verification: {
+    google: '',
+    yandex: '',
   },
 }
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html
-      lang={siteMetadata.language}
-      className={`${lato.variable} ${cardo.variable} scroll-smooth`}
-      suppressHydrationWarning
-    >
+    <html suppressHydrationWarning lang={site.language} className='scroll-smooth'>
       <head>
         <link rel='apple-touch-icon' sizes='180x180' href='/static/favicon/apple-touch-icon.png' />
         <link rel='icon' type='image/png' sizes='32x32' href='/static/favicon/favicon-32x32.png' />
@@ -78,28 +70,16 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <link rel='alternate' type='application/rss+xml' href='/feed.xml' />
       </head>
 
-      <body className='font-lato bg-white text-black antialiased dark:bg-[#171717] dark:text-white'>
-        {/* <ThemeProviders>
-          <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
-
-              <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
-                <Header />
-                <main className="mb-auto">{children}</main>
-              </SearchProvider>
-              <Footer />
-            */}
-
-        <ThemeProviders>
-          <section className='flex min-h-screen flex-col font-sans'>
-            <div className='mx-auto flex h-full w-full max-w-3xl flex-1 flex-col gap-x-24 gap-y-8 px-16 pt-16 sm:flex-row sm:px-6 xl:px-0'>
-              <Navigation />
-              <main className='w-full'>{children}</main>
-            </div>
-            <div className='mt-auto'>
-              <Footer />
-            </div>
-          </section>
-        </ThemeProviders>
+      <body
+        className={cn(
+          'mx-auto min-h-screen max-w-2xl border-border bg-background px-6 py-12 font-sans text-foreground antialiased sm:py-24',
+          fontSans.variable,
+        )}
+      >
+        <Providers>
+          {children}
+          <Navbar />
+        </Providers>
       </body>
     </html>
   )
