@@ -2,8 +2,8 @@ import BlurFade from '@/components/magicui/blur-fade'
 import BlurFadeText from '@/components/magicui/blur-fade-text'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
-import data from '@/data/data'
 import { BLUR_FADE_DELAY } from '@/helpers/constants'
+import data from '@/data/data'
 
 export default function Hero() {
   return (

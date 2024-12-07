@@ -1,7 +1,7 @@
 import BlurFade from '@/components/magicui/blur-fade'
 import { Badge } from '@/components/ui/badge'
-import data from '@/data/data'
 import { BLUR_FADE_DELAY } from '@/helpers/constants'
+import data from '@/data/data'
 
 export default function Skills() {
   return (

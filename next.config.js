@@ -16,8 +16,10 @@ const ContentSecurityPolicy = `
   style-src 'self' 'unsafe-inline';
   font-src 'self';
   img-src * blob: data:;
+  media-src https://res.cloudinary.com;
   connect-src *;
 `
+
 // Third Parties do dodania
 // const ContentSecurityPolicy = `
 //   script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app analytics.umami.is;
@@ -83,12 +85,12 @@ module.exports = () => {
       dirs: ['app', 'components', 'layouts', 'scripts'],
     },
     images: {
-      // remotePatterns: [
-      //   {
-      //     protocol: 'https',
-      //     hostname: 'picsum.photos',
-      //   },
-      // ],
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'res.cloudinary.com',
+        },
+      ],
     },
     async headers() {
       return [

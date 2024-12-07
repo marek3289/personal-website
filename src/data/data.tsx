@@ -1,3 +1,5 @@
+import { Globe } from 'lucide-react'
+
 export default Object.freeze({
   name: 'Marek Mazur',
   initials: 'MM',
@@ -82,6 +84,26 @@ export default Object.freeze({
       start: 'Nov 2023',
       end: null,
       description: '',
+    },
+  ],
+  projects: [
+    {
+      title: 'Based VC',
+      href: 'https://basedvc.fund',
+      dates: 'February 2024 - December 2024',
+      active: true,
+      description:
+        'Developed a token-powered, on-chain decentralized venture capital (VC) fund platform,offering exclusive access to curated investment opportunities in venture capital deals',
+      technologies: ['React.js', 'Next.js', 'Typescript', 'TailwindCSS', 'Express.js', 'PostgreSQL', 'Solidity'],
+      links: [
+        {
+          type: 'Website',
+          href: 'https://basedvc.fund',
+          icon: <Globe className='size-3' />,
+        },
+      ],
+      image: '',
+      video: 'https://res.cloudinary.com/dqpnnvhvd/video/upload/v1733555463/basedvc_egpyfv.mp4',
     },
   ],
 } as const)

@@ -1,8 +1,8 @@
 import ReactMarkdown from 'react-markdown'
 
 import BlurFade from '@/components/magicui/blur-fade'
-import data from '@/data/data'
 import { BLUR_FADE_DELAY } from '@/helpers/constants'
+import data from '@/data/data'
 
 export default function About() {
   return (
