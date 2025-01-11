@@ -12,7 +12,7 @@ export const navMenu = [
 ]
 
 export const socialMenu = [
-  { href: site.contact.github, icon: Icons.github, label: 'Github' },
-  { href: site.contact.linkedin, icon: Icons.linkedin, label: 'LinkedIn' },
-  { href: site.contact.twitter, icon: Icons.twitter, label: 'X' },
+  { href: site.contact.linkedin, icon: Icons.linkedin, label: 'Linkedin', username: 'Marek Mazur' },
+  { href: site.contact.github, icon: Icons.github, label: 'Github', username: '@marek3289' },
+  { href: site.contact.twitter, icon: Icons.twitter, label: 'X', username: '@marko3289' },
 ]

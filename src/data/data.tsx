@@ -3,7 +3,7 @@ import { Globe } from 'lucide-react'
 export default Object.freeze({
   name: 'Marek Mazur',
   initials: 'MM',
-  description: 'Software Engineer with over 5 years of experience. Building a better future through quality software.',
+  description: 'Senior front-end engineer based in Poland.',
   summary:
     'Fullstack developer with more than five years of experience in the industry. Currently, I am building innovative SaaS (Software as a Service) solutions and running a successful software house. My expertise spans across various technologies and platforms, allowing me to deliver comprehensive and robust software solutions for diverse business needs.',
   avatarUrl: '/me.jpeg',

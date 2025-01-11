@@ -8,9 +8,9 @@ export default function Work() {
 
   return (
     <section id='work'>
-      <div className='flex min-h-0 flex-col gap-y-3'>
+      <div className='flex min-h-0 flex-col gap-4'>
         <BlurFade delay={BLUR_FADE_DELAY * 5}>
-          <h2 className='text-xl font-bold'>Work Experience</h2>
+          <h2 className='font-medium'>Work Experience</h2>
         </BlurFade>
 
         {filteredArr.map((work, id) => (
