@@ -18,7 +18,7 @@ export default function About() {
         <ReactMarkdown className='leading-7 text-muted-foreground'>{data.summary}</ReactMarkdown>
       </BlurFade>
       <BlurFade delay={BLUR_FADE_DELAY * 5}>
-        <ul className='flex items-center gap-4'>
+        <ul className='flex flex-wrap items-center gap-2'>
           {socialMenu.map(item => (
             <li key={item.href}>
               <Link href={item.href}>
