@@ -45,7 +45,7 @@ export const ProjectCard = ({
         </div>
       )}
 
-      <Card className='flex h-full flex-col overflow-hidden border transition-all duration-300 ease-out hover:shadow-lg'>
+      <Card className='flex h-full flex-col overflow-hidden border border-border transition-all duration-300 ease-out hover:shadow-lg'>
         <Link href={href || '#'} className={cn('block cursor-pointer', className)}>
           {video && (
             <video

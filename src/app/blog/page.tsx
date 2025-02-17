@@ -7,8 +7,7 @@ import { POSTS_PER_PAGE } from '@/helpers/constants'
 export async function generateMetadata() {
   return {
     title: 'Blog',
-    description:
-      'Dive into my latest thoughts, stories, and insights. From tech experiments to creative endeavors, explore what I’m passionate about and join the conversation.',
+    description: `Dive into my latest thoughts, stories, and insights. From tech experiments to creative endeavors, explore what I'm passionate about and join the conversation.`,
   }
 }
 

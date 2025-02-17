@@ -32,7 +32,7 @@ export const ResumeCard = ({ logoUrl, altText, title, subtitle, period, descript
     <button className='block w-full cursor-pointer' onClick={handleClick}>
       <Card className='flex items-center'>
         <div className='flex-none'>
-          <Avatar className='bg-muted-background m-auto size-12 border dark:bg-foreground'>
+          <Avatar className='bg-muted-background m-auto size-12 border border-border dark:bg-foreground'>
             <AvatarImage src={logoUrl} alt={altText} className='object-contain' />
             <AvatarFallback>{altText[0]}</AvatarFallback>
           </Avatar>
@@ -57,16 +57,16 @@ export const ResumeCard = ({ logoUrl, altText, title, subtitle, period, descript
             {subtitle && <p className='self-start font-sans text-xs'>{subtitle}</p>}
           </CardHeader>
 
-          {description && (
-            <motion.div
+          {description ? (
+            <motion.p
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: isExpanded ? 1 : 0, height: isExpanded ? 'auto' : 0 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className='text-left text-xs sm:text-sm'
+              className='text-left text-xs text-muted-foreground'
             >
               {description}
-            </motion.div>
-          )}
+            </motion.p>
+          ) : null}
         </div>
       </Card>
     </button>

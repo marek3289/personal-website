@@ -3,9 +3,8 @@ import { Globe } from 'lucide-react'
 export default Object.freeze({
   name: 'Marek Mazur',
   initials: 'MM',
-  description: 'Senior front-end engineer based in Poland.',
-  summary:
-    'Fullstack developer with more than five years of experience in the industry. Currently, I am building innovative SaaS (Software as a Service) solutions and running a successful software house. My expertise spans across various technologies and platforms, allowing me to deliver comprehensive and robust software solutions for diverse business needs.',
+  description: 'Senior full-stack engineer based in Poland.',
+  summary: `Fullstack developer with over 6 years of experience, specializing in building innovative applications with Next.js and React.js. Currently, I'm focused on developing SaaS solutions with the latest AI technologies and working on blockchain projects. I combine front-end and back-end expertise to deliver high-impact solutions`,
   avatarUrl: '/me.jpeg',
   skills: [
     'HTML',
@@ -29,7 +28,7 @@ export default Object.freeze({
       logoUrl: '/static/logos/localhost.avif',
       start: 'Feb 2019',
       end: 'Apr 2020',
-      description: '',
+      description: `Developed healthcare data management application with React and TypeScript using the "FHIR" standard. Contributed to a Web3 project by using Hardhat to integrate solidity smart contracts with the frontend.`,
     },
     {
       company: 'Qarbon IT',
@@ -38,7 +37,7 @@ export default Object.freeze({
       logoUrl: '/static/logos/qarbon.avif',
       start: 'May 2020',
       end: 'Apr 2022',
-      description: '',
+      description: `Participated in an Agile team to develop a React-based analytics dashboard, empowering retail businesses to optimize operations through data-driven decision-making.`,
     },
     {
       company: 'Pronos',
@@ -47,7 +46,7 @@ export default Object.freeze({
       logoUrl: '/static/logos/pronos.avif',
       start: 'May 2022',
       end: 'Oct 2022',
-      description: '',
+      description: `Participated in an Agile team to develop a React-based analytics dashboard, empowering retail businesses to optimize operations through data-driven decision-making.`,
     },
     {
       company: 'Docmatic',
@@ -56,7 +55,7 @@ export default Object.freeze({
       logoUrl: '/static/logos/docmatic.avif',
       start: 'Nov 2022',
       end: 'Apr 2023',
-      description: '',
+      description: `Led development of an accessible social networking platform tailored for seniors. Implemented core functionality including authentication system, customizable user profiles with intuitive interfaces, and an accessible rich text editor.`,
     },
     {
       company: 'Polska Press',
@@ -65,7 +64,7 @@ export default Object.freeze({
       logoUrl: '/static/logos/polskapress.avif',
       start: 'May 2023',
       end: 'Feb 2024',
-      description: '',
+      description: `Collaborated within an Agile team for Poland's largest media group to develop high-traffic platforms, serving millions of monthly users across major sites such as i.pl, telemagazyn.pl, and naszemiasto.pl.`,
     },
     {
       company: 'Sublime Ventures',
@@ -74,7 +73,7 @@ export default Object.freeze({
       logoUrl: '/static/logos/sublimeventures.avif',
       start: 'Mar 2024',
       end: null,
-      description: '',
+      description: `Developed and managed a blockchain-powered, decentralized investment platform that enables retail investors to access top Web3 projects. Scaled the platform to support 22+ investments ranging from $300K to $1M and built infrastructure to sustain 50+ strategic partnerships.`,
     },
     {
       company: '20Nomads',
@@ -83,7 +82,7 @@ export default Object.freeze({
       logoUrl: '/static/logos/20nomads.avif',
       start: 'Nov 2023',
       end: null,
-      description: '',
+      description: 'Software house that provides software development services to clients.',
     },
   ],
   projects: [

@@ -1,10 +1,8 @@
-import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
-import { ExternalLink } from 'lucide-react'
 
+import ExternalLinkBadge from '@/components/external-link-badge'
 import BlurFade from '@/components/magicui/blur-fade'
 import { BLUR_FADE_DELAY } from '@/helpers/constants'
-import { Badge } from '@/components/ui/badge'
 import data from '@/data/data'
 import { socialMenu } from '@/data/nav-links'
 
@@ -21,14 +19,7 @@ export default function About() {
         <ul className='flex flex-wrap items-center gap-2'>
           {socialMenu.map(item => (
             <li key={item.href}>
-              <Link href={item.href}>
-                <Badge variant='outline' className='flex items-center gap-1 text-sm'>
-                  <item.icon className='mr-1 size-4' />
-                  {item.username}
-                  <span className='text-xs font-normal text-muted-foreground'>{item.label}</span>
-                  <ExternalLink className='size-3 text-muted-foreground' />
-                </Badge>
-              </Link>
+              <ExternalLinkBadge icon={item.icon} label={item.username} href={item.href} source={item.label} />
             </li>
           ))}
         </ul>

@@ -1,6 +1,6 @@
 import BlogListLayout from './blog-list-layout'
 
+import ComponentLayout from './component-layout'
 import PostLayout from './post-layout'
-import PostBanner from './post-banner'
 
-export { BlogListLayout, PostLayout, PostBanner }
+export { BlogListLayout, ComponentLayout, PostLayout }

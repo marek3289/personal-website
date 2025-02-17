@@ -7,14 +7,14 @@ import { allPosts } from 'contentlayer/generated'
 import type { Post } from 'contentlayer/generated'
 
 import siteMetadata from '@/data/site'
-import { PostLayout, PostBanner } from '@/layouts'
+import { PostLayout, ComponentLayout } from '@/layouts'
 import { components } from '@/components/mdx-components'
 import '@/styles/prism.css'
 import 'katex/dist/katex.css'
 
 const defaultLayout = 'PostLayout'
 
-const layouts = { PostLayout, PostBanner }
+const layouts = { PostLayout, ComponentLayout }
 
 export async function generateMetadata({ params }: { params: { slug: string[] } }): Promise<Metadata | undefined> {
   const slug = decodeURI(params.slug.join('/'))
