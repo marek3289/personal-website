@@ -19,6 +19,11 @@ export const metadata: Metadata = {
     template: `%s | ${site.shortTitle}`,
   },
   description: site.description,
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+    shortcut: '/favicon.ico',
+  },
   openGraph: {
     title: site.title,
     description: site.description,
@@ -60,14 +65,21 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
   return (
     <html suppressHydrationWarning lang={site.language} className='scroll-smooth'>
       <head>
-        <link rel='apple-touch-icon' sizes='180x180' href='/static/favicon/apple-touch-icon.png' />
+        {/* <link rel='apple-touch-icon' sizes='180x180' href='/static/favicon/apple-touch-icon.png' />
         <link rel='icon' type='image/png' sizes='32x32' href='/static/favicon/favicon-32x32.png' />
         <link rel='icon' type='image/png' sizes='16x16' href='/static/favicon/favicon-16x16.png' />
         <link rel='manifest' href='/static/favicon/site.webmanifest' />
         <link rel='mask-icon' href='/static/favicon/safari-pinned-tab.svg' color='#383838' />
         <meta name='msapplication-TileColor' content='#000000' />
         <meta name='theme-color' content='#000000' />
-        <link rel='alternate' type='application/rss+xml' href='/feed.xml' />
+        <link rel='alternate' type='application/rss+xml' href='/feed.xml' /> */}
+        {/* <link rel='icon' type='image/png' href='/static/favicon/favicon-96x96.png' sizes='96x96' />
+        <link rel='icon' type='image/svg+xml' href='/static/favicon/favicon.svg' />
+        <link rel='shortcut icon' href='/static/favicon/favicon.ico' />
+        <link rel='apple-touch-icon' sizes='180x180' href='/static/favicon/apple-touch-icon.png' />
+        <meta name='apple-mobile-web-app-title' content='Marek Mazur' />
+        <link rel='manifest' href='/static/favicon/site.webmanifest' /> */}
+        <meta name='apple-mobile-web-app-title' content='Marek Mazur' />
       </head>
 
       <body
